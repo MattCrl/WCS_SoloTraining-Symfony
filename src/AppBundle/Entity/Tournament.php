@@ -99,4 +99,45 @@ class Tournament
     {
         return $this->nbTeams;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->games = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add game
+     *
+     * @param \AppBundle\Entity\Game $game
+     *
+     * @return Tournament
+     */
+    public function addGame(\AppBundle\Entity\Game $game)
+    {
+        $this->games[] = $game;
+
+        return $this;
+    }
+
+    /**
+     * Remove game
+     *
+     * @param \AppBundle\Entity\Game $game
+     */
+    public function removeGame(\AppBundle\Entity\Game $game)
+    {
+        $this->games->removeElement($game);
+    }
+
+    /**
+     * Get games
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGames()
+    {
+        return $this->games;
+    }
 }

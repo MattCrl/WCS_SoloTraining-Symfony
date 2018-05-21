@@ -139,4 +139,76 @@ class Game
     {
         return $this->level;
     }
+
+    /**
+     * Set team1
+     *
+     * @param \AppBundle\Entity\Team $team1
+     *
+     * @return Game
+     */
+    public function setTeam1(\AppBundle\Entity\Team $team1 = null)
+    {
+        $this->team1 = $team1;
+
+        return $this;
+    }
+
+    /**
+     * Get team1
+     *
+     * @return \AppBundle\Entity\Team
+     */
+    public function getTeam1()
+    {
+        return $this->team1;
+    }
+
+    /**
+     * Set team2
+     *
+     * @param \AppBundle\Entity\Team $team2
+     *
+     * @return Game
+     */
+    public function setTeam2(\AppBundle\Entity\Team $team2 = null)
+    {
+        $this->team2 = $team2;
+
+        return $this;
+    }
+
+    /**
+     * Get team2
+     *
+     * @return \AppBundle\Entity\Team
+     */
+    public function getTeam2()
+    {
+        return $this->team2;
+    }
+
+    /**
+     * Set tournament
+     *
+     * @param \AppBundle\Entity\Tournament $tournament
+     *
+     * @return Game
+     */
+    public function setTournament(\AppBundle\Entity\Tournament $tournament = null)
+    {
+        $this->tournament = $tournament;
+
+        return $this;
+    }
+
+    /**
+     * Get tournament
+     *
+     * @return \AppBundle\Entity\Tournament
+     */
+    public function getTournament()
+    {
+        return $this->tournament;
+    }
 }

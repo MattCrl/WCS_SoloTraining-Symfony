@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Team
 {
+
+
     /**
      * @var int
      *
@@ -94,4 +96,3 @@ class Team
         return $this->country;
     }
 }
-
