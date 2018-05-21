@@ -5,18 +5,22 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Tournament
+ * Player
  *
- * @ORM\Table(name="tournament")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\TournamentRepository")
+ * @ORM\Table(name="player")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PlayerRepository")
  */
-class Tournament
+class Player
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
 
     /**
-     * @ORM\OneToMany(targetEntity="Game", mappedBy="tournament")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Team")
      */
-    private $games;
+    private $team;
 
     /**
      * @var int
@@ -30,16 +34,16 @@ class Tournament
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=120)
+     * @ORM\Column(name="name", type="string", length=100)
      */
     private $name;
 
     /**
-     * @var int
+     * @var \DateTime
      *
-     * @ORM\Column(name="nb_teams", type="integer")
+     * @ORM\Column(name="birth_date", type="date")
      */
-    private $nbTeams;
+    private $birthDate;
 
 
     /**
@@ -57,7 +61,7 @@ class Tournament
      *
      * @param string $name
      *
-     * @return Tournament
+     * @return Player
      */
     public function setName($name)
     {
@@ -77,26 +81,27 @@ class Tournament
     }
 
     /**
-     * Set nbTeams
+     * Set birthDate
      *
-     * @param integer $nbTeams
+     * @param \DateTime $birthDate
      *
-     * @return Tournament
+     * @return Player
      */
-    public function setNbTeams($nbTeams)
+    public function setBirthDate($birthDate)
     {
-        $this->nbTeams = $nbTeams;
+        $this->birthDate = $birthDate;
 
         return $this;
     }
 
     /**
-     * Get nbTeams
+     * Get birthDate
      *
-     * @return int
+     * @return \DateTime
      */
-    public function getNbTeams()
+    public function getBirthDate()
     {
-        return $this->nbTeams;
+        return $this->birthDate;
     }
 }
+

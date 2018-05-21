@@ -5,19 +5,13 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Tournament
+ * Team
  *
- * @ORM\Table(name="tournament")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\TournamentRepository")
+ * @ORM\Table(name="team")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TeamRepository")
  */
-class Tournament
+class Team
 {
-
-    /**
-     * @ORM\OneToMany(targetEntity="Game", mappedBy="tournament")
-     */
-    private $games;
-
     /**
      * @var int
      *
@@ -30,16 +24,16 @@ class Tournament
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=120)
+     * @ORM\Column(name="name", type="string", length=100)
      */
     private $name;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="nb_teams", type="integer")
+     * @ORM\Column(name="country", type="string", length=100)
      */
-    private $nbTeams;
+    private $country;
 
 
     /**
@@ -57,7 +51,7 @@ class Tournament
      *
      * @param string $name
      *
-     * @return Tournament
+     * @return Team
      */
     public function setName($name)
     {
@@ -77,26 +71,27 @@ class Tournament
     }
 
     /**
-     * Set nbTeams
+     * Set country
      *
-     * @param integer $nbTeams
+     * @param string $country
      *
-     * @return Tournament
+     * @return Team
      */
-    public function setNbTeams($nbTeams)
+    public function setCountry($country)
     {
-        $this->nbTeams = $nbTeams;
+        $this->country = $country;
 
         return $this;
     }
 
     /**
-     * Get nbTeams
+     * Get country
      *
-     * @return int
+     * @return string
      */
-    public function getNbTeams()
+    public function getCountry()
     {
-        return $this->nbTeams;
+        return $this->country;
     }
 }
+

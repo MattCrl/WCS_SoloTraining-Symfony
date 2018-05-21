@@ -13,21 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Game
 {
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Team")
-     */
-    private $team1;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Team")
-     */
-    private $team2;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Tournament", inversedBy="games")
-     */
-    private $tournament;
-
-    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -140,3 +125,4 @@ class Game
         return $this->level;
     }
 }
+

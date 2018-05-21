@@ -12,12 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Tournament
 {
-
-    /**
-     * @ORM\OneToMany(targetEntity="Game", mappedBy="tournament")
-     */
-    private $games;
-
     /**
      * @var int
      *
@@ -100,3 +94,4 @@ class Tournament
         return $this->nbTeams;
     }
 }
+

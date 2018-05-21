@@ -12,6 +12,16 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Player
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Team")
+     */
+    private $team;
+
     /**
      * @var int
      *
@@ -93,5 +103,28 @@ class Player
     {
         return $this->birthDate;
     }
-}
 
+    /**
+     * Set team
+     *
+     * @param \AppBundle\Entity\Team $team
+     *
+     * @return Player
+     */
+    public function setTeam(\AppBundle\Entity\Team $team = null)
+    {
+        $this->team = $team;
+
+        return $this;
+    }
+
+    /**
+     * Get team
+     *
+     * @return \AppBundle\Entity\Team
+     */
+    public function getTeam()
+    {
+        return $this->team;
+    }
+}
