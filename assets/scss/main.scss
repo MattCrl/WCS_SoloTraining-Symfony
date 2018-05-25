@@ -1,2 +1,27 @@
 
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  margin: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.header {
+  height: 800px;
+  background-image: url("https://s3.amazonaws.com/twin-galaxies-www/assets/article/2018/04/12/fortnite-raven-skin-gliding-in-moonlight2_feature.jpg");
+}
+
+.bannerTitle {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding-top: 620px;
+  font-size: 80px;
+}
+
+.navbar {
+  background-color: #232323;
+
+
+}
